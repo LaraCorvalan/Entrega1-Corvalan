@@ -1,0 +1,19 @@
+{% extends 'padre.html' %} {%load static %} {% block contenidoDinamico %}
+{% if formulario.errors %}
+    <p style="color: red">Estan mal los datos</p>
+{% endif %}
+<div style="height: 520px">
+    <h3>Añadir nuevo autor</h3>
+    <div>
+        <form action="/autores/" method="POST"> {% csrf_token %}
+          <p>Nombre: <input type="text" name="nombre"></p>
+          <p>Biografia: <textarea name="biografia" cols="30" rows="10"></textarea></p>
+          <p>Ultimo libro: <input type="text" name="libros"></p>
+
+          <input type="submit" value="Enviar">
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

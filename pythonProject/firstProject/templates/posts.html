@@ -1,0 +1,71 @@
+{% extends 'padre.html' %} {%load static %} {% block contenidoDinamico %}
+<div style="display: flex; justify-content: center; margin-top: 30px">
+  <form action="search/" method="GET">
+    <input
+      type="text"
+      name="titulo"
+      id="titulo"
+      placeholder="Ingrese un título"
+    />
+    <input type="submit" value="Buscar" />
+  </form>
+</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-around">
+  {% for post in posts%}
+
+  <div
+    style="
+      background-color: rgba(95, 158, 160, 0.507);
+      max-height: 280px;
+      height: 280px;
+      max-width: 320px;
+      width: 320px;
+      margin: 20px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 15px;
+    "
+  >
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 7px;
+        margin-bottom: 0;
+      "
+    >
+      <h4 style="color: black; margin: 0px">{{post.titulo}}</h4>
+      <p style="color: black; margin: 0px">{{post.sinopsis}}</p>
+      <p style="color: black; margin: 0px"><b>Autor:</b> {{post.autor}}</p>
+      <p style="color: black; margin: 0px"><b> Género:</b> {{post.genero}}</p>
+      <p style="color: black; margin: 0px">
+        <b>Nº de páginas:</b> {{post.paginas}}
+      </p>
+      <p style="color: black; margin: 0px">
+        <b>Fecha de publicacion:</b> {{post.fecha_publicacion}}
+      </p>
+    </div>
+    <div
+      style="
+        background-color: antiquewhite;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        border-radius: 0px 0px 15px 15px;
+        height: 25px;
+      "
+    >
+      <a href="{% url 'Reseñas' %}" style="text-decoration: none; color: black"
+        >Añadir Reseña</a
+      >
+    </div>
+  </div>
+
+  {% endfor %}
+</div>
+
+{% endblock %}

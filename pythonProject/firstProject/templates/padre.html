@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Entre libros Blog</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container px-5">
+                <a class="navbar-brand" href="#!">Entre libros Blog</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'inicio' %}">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'Autores' %}">Autores</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'Libros' %}">Añadir libros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'mostrarLibros' %}">Lista de libros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'Sobre mi' %}">Sobre mí</a></li>
+                
+                    </div>
+            </div>
+        </nav>
+        {% block contenidoDinamico %}
+        <!-- Page Content-->
+        
+        <div class="container px-4 px-lg-5">
+            <!-- Heading Row-->
+            <div class="row gx-4 gx-lg-5 align-items-center my-5" style="display: flex; justify-content:center">
+                <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="https://images.unsplash.com/photo-1531988042231-d39a9cc12a9a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="..." /></div>
+                <div class="col-lg-5" style="display: flex; justify-content:center; flex-direction: column; align-items: center;">
+                    <h1 class="font-weight-light">Entre libros Blog</h1>
+                    <p>Este blog está dedicado a aquellos amantes de los libros. ¿Tienes publicado un libro y quieres promocionarlo? ¿Te interesa que lo conozca la mayor comunidad de lectores en castellano? ¿Tienes una editorial y has hecho una apuesta por uno o varios libros?
+                        Sigue leyendo y descubre nuestro nuevo servicio de reseñas y recomendaciones…</p>
+                    <a style="background-color: rgba(95, 158, 160, 0.507); text-decoration: none; color: black; padding: 10px; padding-left: 55px; padding-right: 55px; margin: 20px; border-radius: 20px;" href="{% url 'lista_reseñas' %}">Ver reseñas</a>
+                </div>
+            </div>
+            <!-- Call to Action-->
+            <div class="card text-white bg-secondary my-5 py-4 text-center">
+                <div class="card-body"><a class="text-white m-0" href="{% url 'Libros' %}" style="text-decoration: none; font-size:18px;">¡Quiero ver el catálogo de libros!</a></div>
+            </div>
+            <!-- Content Row-->
+           {% if posts %}
+            
+            
+            <div  style="display:flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between;  ">
+                <div class="col-md-4 mb-5">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h2 class="card-title">Card One</h2>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
+                        </div>
+                        <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
+                    </div>
+                </div>
+                 <div class="col-md-4 mb-5"> 
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h2 class="card-title">Card Two</h2>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi labore.</p>
+                        </div>
+                        <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h2 class="card-title">Card Three</h2>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
+                        </div>
+                        <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
+                    </div> 
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        {% endblock %}
+
+        <!-- Footer-->
+        <footer class="py-5 bg-dark" style="bottom:0%;height:100%; display:flex; justify-content:flex-end; align-items:flex-end; ">
+            <div class="container px-4 px-lg-5"><p class="m-0 text-center text-white">Copyright &copy; Entre Libros 2022</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

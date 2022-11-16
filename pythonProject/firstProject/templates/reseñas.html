@@ -1,0 +1,19 @@
+{% extends 'padre.html' %}
+{%load static %} 
+{% block contenidoDinamico %}
+{% if reseñas %}
+    {% for e in reseñas%}
+    <div>
+        <h3>{{e.libro}}</h3>
+        <p>{{e.reseña}}</p>
+        <p>Cantidad de estrellas: {{e.estrellas}}</p>
+    </div>
+    {% endfor %}
+    <a href="{% url 'mostrarLibros' %}">Dejar una nueva reseña</a>
+{% else %}
+    <p>Aún no hay reseñas.</p>
+    <a href="{% url 'mostrarLibros' %}">Sé el primero en hacer una!</a>
+{% endif %}
+
+
+{% endblock %}
