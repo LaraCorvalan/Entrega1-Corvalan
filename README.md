@@ -23,6 +23,6 @@ Para acceder al proyecto clonándolo, deberás ejecutar en consola:
 
 <b>Una vez creado y activado el entorno virtual en el directorio correspondiente, se puede ejecutar desde la terminal el siguiente enunciado para correr la aplicación:</b>
 <br></br>
-<i>cd .\pythonProject\firstProject\
+<i>cd .\pythonProject\firstProject\ <i>
 <br></br>
-python manage.py runserver</i>
+<i> python manage.py runserver</i>
