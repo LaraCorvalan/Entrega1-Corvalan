@@ -26,3 +26,4 @@ Para acceder al proyecto clonándolo, deberás ejecutar en consola:
 <i>cd .\pythonProject\firstProject\ <i>
 <br></br>
 <i> python manage.py runserver</i>
+Si todo fue bien esto iniciara un servidor web en el cual ya podremos navegar.
