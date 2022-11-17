@@ -7,4 +7,22 @@ libros con su correspondiente informacion y reseña para poder dar espacio al de
 <h1>Como instalar y ejecutar el proyecto</h1>
 Para acceder al proyecto clonándolo, deberás ejecutar en consola:
 <br></br>
-<i>git clone</i>
+<i>git clone https://github.com/LaraCorvalan/Entrega1-Corvalan.git</i>
+<br></br>
+<h2>Instalación entorno virtual</h2>
+
+<i>pip install virtualenv</i>
+<br></br>
+<i>virtualenv "nameenv"</i>
+<br></br>
+<i>"namenev"\Scripts\activate</i>
+<br></br>
+<b>Luego procedemos a instalar Django para correr el entorno:</b>
+<br></br>
+<i>pip install Django</i>
+
+<b>Una vez creado y activado el entorno virtual en el directorio correspondiente, se puede ejecutar desde la terminal el siguiente enunciado para correr la aplicación:</b>
+<br></br>
+<i>cd .\pythonProject\firstProject\
+<br></br>
+python manage.py runserver</i>
